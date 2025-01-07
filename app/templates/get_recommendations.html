@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Products Recommendation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='get_recommendations.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <div id="container">
+    <div id="filter">
+      <form id="recommendation-form">
+        <h4>Get product recommendations as per your skin</h4>
+        <label for="skin_type">Select your skin type:</label>
+        <select name="skin_type">
+          <option value="Combination">Combination</option>
+          <option value="Dry">Dry</option>
+          <option value="Normal">Normal</option>
+          <option value="Oily">Oily</option>
+          <option value="Sensitive">Sensitive</option>
+        </select>
+
+        <label for="label_filter">Select Label (Optional):</label>
+        <select name="label_filter">
+          {% for label in labels %}
+          <option value="{{ label }}">{{ label }}</option>
+          {% endfor %}
+        </select>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <label for="rating_filter">Rating:</label>
+        <div id="rating-stars" data-rating="0">
+          <i class="fas fa-star" data-value="1"></i>
+          <i class="fas fa-star" data-value="2"></i>
+          <i class="fas fa-star" data-value="3"></i>
+          <i class="fas fa-star" data-value="4"></i>
+          <i class="fas fa-star" data-value="5"></i>
+        </div>
+        <input type="hidden" name="rating_filter" id="rating_filter" value="0">
+        <!-- Hidden input to store the selected rating -->
+
+        <label for="brand_filter">Select Brand (Optional):</label>
+        <select name="brand_filter">
+          {% for brand in brands %}
+          <option value="{{ brand }}">{{ brand }}</option>
+          {% endfor %}
+        </select>
+
+        <label for="price_range">Enter price range (In $):</label>
+        <input type="text" name="price_range" value="10,100" placeholder="e.g. 10,100">
+
+        <label for="ingredient_input">Enter ingredients (Optional):</label>
+        <textarea name="ingredient_input" rows="4" cols="50"></textarea>
+
+        <button type="submit">Get Recommendation</button>
+      </form>
+    </div>
+
+    <div id="output">
+      <div id="recommendations-container"></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("#recommendation-form").on("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        var formData = $(this).serialize();
+
+        // Make AJAX POST request
+        $.ajax({
+          url: "/get_recommendations",  // The Flask route
+          type: "POST",
+          data: formData,
+          success: function (response) {
+            // Update the recommendations section with the HTML returned from Flask
+            $("#recommendations-container").html(response);
+          },
+          error: function () {
+            alert("Error with the request. Please try again.");
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll('#rating-stars i').forEach(star => {
+      star.addEventListener('click', function () {
+        const rating = this.getAttribute('data-value');
+        document.getElementById('rating_filter').value = rating;
+
+        // Update the selected stars
+        document.querySelectorAll('#rating-stars i').forEach(s => {
+          s.classList.remove('selected');
+          if (s.getAttribute('data-value') <= rating) {
+            s.classList.add('selected');
+          }
+        });
+      });
+
+      // Highlight stars on hover
+      star.addEventListener('mouseover', function () {
+        const hoverValue = this.getAttribute('data-value');
+        document.querySelectorAll('#rating-stars i').forEach(s => {
+          s.classList.remove('hover');
+          if (s.getAttribute('data-value') <= hoverValue) {
+            s.classList.add('hover');
+          }
+        });
+      });
+
+      // Reset hover effect when mouse leaves
+      star.addEventListener('mouseout', function () {
+        document.querySelectorAll('#rating-stars i').forEach(s => s.classList.remove('hover'));
+      });
+    });
+  </script>
+
+  {% endblock %}
+</body>
+
+</html>

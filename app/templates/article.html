@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Products Recommendation System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='article.css') }}">
+</head>
+
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <header class="welcome-section">
+    <h1>Skincare Education Hub</h1>
+    <p>Explore expert advice, trusted dermatologists, and curated skincare products for your unique skin needs.</p>
+    <section>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for articles, tips, or topics..." id="search-input">
+        <button class="search-button">Search</button>
+      </div>
+    </section>
+  </header>
+
+  <section id="articles" class="articles-section">
+    <div class="articles-container">
+      <div class="article-card">
+        <a href="https://www.health.com/skincare-routine-8364021" target="_blank">
+          <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Skincare">
+          <h3>The Ultimate Guide to Building Your Skincare Routine</h3>
+        </a>
+        <p>Learn the essential steps for an effective skincare regimen tailored to your needs.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://www.vogue.com/article/skincare-myths" target="_blank">
+          <img src="{{ url_for('static', filename='images/image2.png') }}" alt="Skincare Myths">
+          <h3>10 Common Skincare Myths Debunked</h3>
+        </a>
+        <p>Discover the truth behind popular skincare misconceptions.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://www.cetaphil.com.au/skincare-tips/morning_night_skincare.html#:~:text=A%20morning%20skincare%20routine%20should,and%20products%20such%20as%20makeup." target="_blank">
+          <img src="{{ url_for('static', filename='images/image3.png') }}" alt="Night Routine">
+          <h3>Morning vs Night: Do You Really Need Two Skincare Routines?</h3>
+        </a>
+        <p>Explore the benefits of separate routines for day and night.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://www.vogue.com/beauty/skin" target="_blank">
+          <img src="{{ url_for('static', filename='images/image4.png') }}" alt="Skincare">
+          <h3>Professional Skincare Tips</h3>
+        </a>
+        <p>Learn the essential steps for an effective skincare regimen tailored to your needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="topics" class="topics-section">
+    <h2>Featured Topics</h2>
+    <div class="articles-container">
+      <div class="article-card">
+        <a href="https://www.esteelauder.co.nz/blog-article-know-your-skin-type#:~:text=The%20Bare%2DFaced%20Method&text=Observe%20how%20your%20skin%20feels,you%20likely%20have%20normal%20skin." target="_blank">
+          <img src="{{ url_for('static', filename='images/image5.png') }}" alt="Skincare">
+          <h3>How to Identify Your Skin Type</h3>
+        </a>
+        <p>Find out the best ways to determine your skin type and choose products accordingly.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3997205/" target="_blank">
+          <img src="{{ url_for('static', filename='images/image6.png') }}" alt="Skincare Myths">
+          <h3>10 Common Skincare Myths Debunked</h3>
+        </a>
+        <p>Discover the truth behind popular skincare misconceptions.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://www.dermatologistnewyork.org/blog/why-you-still-need-sunscreen-in-the-winter-and-which-type-is-best#:~:text=Yes!,in%20a%20condition%20called%20photoaging." target="_blank">
+          <img src="{{ url_for('static', filename='images/image7.png') }}" alt="Night Routine">
+          <h3>Why Sunscreen is a Must All Year Round</h3>
+        </a>
+        <p>Understand the importance of using sunscreen every day, no matter the season.</p>
+      </div>
+      <div class="article-card">
+        <a href="https://www.healthline.com/nutrition/12-foods-for-healthy-skin" target="_blank">
+          <img src="{{ url_for('static', filename='images/image8.png') }}" alt="Healthy Skin">
+          <h3>Top Foods for Healthy, Glowing Skin</h3>
+        </a>
+        <p>Learn how your diet impacts your skin and which foods promote healthy skin.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleFAQ(element) {
+      const answer = element.nextElementSibling;
+      const arrow = element.querySelector(".arrow");
+
+      // Toggle visibility
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        arrow.textContent = "▼";
+      } else {
+        answer.style.display = "block";
+        arrow.textContent = "▲";
+      }
+    }
+  </script>
+  <script src="{{ url_for('static', filename='article.js') }}"></script>
+  <footer class="footer-section">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo">
+        <p>Your trusted skincare partner.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@skincarehub.com</p>
+        <p>Phone: +123-456-7890</p>
+        <div class="footer-socials">
+          <a href="#"><img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 Skincare Hub. All rights reserved.</p>
+    </div>
+  </footer>
+  {% endblock %}
+</body>
+
+</html>

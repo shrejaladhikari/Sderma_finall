@@ -1,0 +1,486 @@
+.auth-buttons .login,
+.auth-buttons .signup {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.auth-buttons .signup {
+  background-color: #007BFF;
+}
+
+.auth-buttons .signup:hover {
+  background-color: #0056b3;
+}
+
+ table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+/* Section styles */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 120px;
+  background-color: #f9f9f9;
+  gap: 120px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 50%;
+  padding-left: 200px;
+}
+
+.text-content h2 {
+  font-size: 1rem;
+  max-width: 100%;
+  margin: 0;
+  line-height: 2.6rem;
+}
+
+.text-content h1 {
+  font-size: 2.25rem;
+  line-height: 1rem;
+  max-width: 100%;
+  color: #007BFF;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+#book-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#book-button:hover {
+  background-color: #0056b3;
+}
+
+.image-content {
+  flex: 1;
+  text-align: right;
+}
+
+.image-content img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+
+
+}
+
+.top-dermatologists {
+  text-align: center;
+  margin: 40px 100px auto 100px;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 60px;
+  border: 1px solid rgb(54, 54, 54);
+}
+
+.top-dermatologists h2 {
+  font-size: 2rem;
+  color: black;
+}
+
+.dermatologist-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.dermatologist {
+  text-align: center;
+}
+
+.dermatologist img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dermatologist p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.top-dermatologists a {
+  border: 1.2px solid #007bff;
+  color: #007bff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.top-dermatologists a:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.dermatologist-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.info-container {
+  margin-top: 50px;
+  display: flex;
+  gap: 120px;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+  max-width: 50%;
+}
+
+.text-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.text-container p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Skincare Section Styles */
+.skincare-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.products-container {
+  display: flex;
+  gap: 120px;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.text-content {
+  max-width: 50%;
+  padding-left: 0px;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.text-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.image1-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-content h3 {
+  font-size: 1.25rem;
+  color: #007BFF;
+  line-height: 1.8rem;
+}
+
+.testimonial-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.4rem;
+}
+
+.testimonial-content strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0056b3;
+}
+
+.faq-section {
+  padding: 20px;
+  max-width: 1016px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+.faq-container {
+  margin-top: 0px;
+}
+
+.faq-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-list .faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f1f1f1;
+}
+
+.faq-answer {
+  display: none;
+  font-size: 16px;
+  color: #555;
+  padding: 10px;
+  border-left: 2px solid #007bff;
+  margin-left: 10px;
+}
+
+.chat-section {
+  margin-top: 20px;
+  background-color: #eef4ff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.chat-container p {
+  margin: 5px 0;
+}
+
+.chat-button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-button:hover {
+  background-color: #0056b3;
+}
+
+.footer-section {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  text-align: center; /* Center-align content for smaller screens */
+}
+
+/* footer */
+.footer-logo {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-logo img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.footer-links {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-links h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-contact h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+}
+
+.footer-socials {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-socials img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+  color: #ccc;
+  font-size: 13px;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
