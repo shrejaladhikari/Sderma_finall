@@ -26,6 +26,7 @@ executing==2.1.0
 fastjsonschema==2.21.1
 Flask==3.0.3
 Flask-Cors==5.0.0
+Flask-SQLAlchemy==3.1.1
 flatbuffers==24.3.25
 fqdn==1.5.1
 gast==0.6.0
@@ -95,6 +96,7 @@ prometheus_client==0.21.0
 prompt_toolkit==3.0.48
 protobuf==5.29.0
 psutil==6.1.0
+psycopg2==2.9.10
 psycopg2-binary==2.9.10
 ptyprocess==0.7.0
 pure_eval==0.2.3
