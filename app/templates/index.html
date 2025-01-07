@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skincare Products Recommendation System</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='article.css') }}">
 
 <body>
   {% extends "base.html" %}
@@ -17,7 +18,7 @@
       <a id="book-button" href="/book_now">Book Now</a>
     </div>
     <div class="image-content">
-      <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Showcase Image">
+     <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Showcase Image">
     </div>
   </section>
 
@@ -37,7 +38,7 @@
   <section class="dermatologist-info">
     <div class="info-container">
       <div class="image-container">
-        <img src="{{ url_for('static', filename='images/image8.png') }}" alt="Dermatologist performing a procedure">
+        <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Dermatologist performing a procedure">
       </div>
       <div class="text-container">
         <h2>Find a Dermatologist Near You</h2>
@@ -50,15 +51,16 @@
 
   <section class="skincare-products">
     <div class="products-container">
-      <div class="text-content">
+      <div class="image-content">
+        <img src="{{ url_for('static', filename='images/image20.png') }}" alt="Dermatologist Approved Skincare">
+      </div>
+      <div class="text-content1">
         <h2>Shop Dermatologist Approved Skincare</h2>
         <p>Shop dermatologist-approved skincare for every skin type. Our clinically-tested products target acne, aging,
           hydration, and more. Achieve healthier, glowing skin today!</p>
         <a id="book-button" href="/get_recommendations">Explore Now</a>
       </div>
-      <div class="image1-content">
-        <img src="{{ url_for('static', filename='images/image20.png') }}" alt="Dermatologist Approved Skincare">
-      </div>
+
     </div>
   </section>
 
@@ -76,7 +78,7 @@
     </div>
   </section>
 
-  <section class="testimonials">
+  <section class="testimonials" id="test">
     <h2>User Reviews</h2>
     <div class="testimonial-container">
       <div class="testimonial">
@@ -149,50 +151,39 @@
     </div>
   </section>
 
-    <footer class="footer-section">
+  <footer class="footer-section">
     <div class="footer-container">
-      <!-- Logo Section -->
       <div class="footer-logo">
         <img src="{{ url_for('static', filename='footer-logo.png') }}" alt="Company Logo">
         <p>Your trusted skincare partner.</p>
       </div>
 
-      <!-- Quick Links Section -->
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQs</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/article">Articles</a></li>
+          <li><a href="/book_now">Testimonials</a></li>
+          <li><a href="/get_recommendations">Recommendations</a></li>
+          <li><a href="/">FAQs</a></li>
         </ul>
       </div>
 
-      <!-- Contact Section -->
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>Email: <a href="mailto:support@saderma.com">support@saderma.com</a></p>
-        <p>Phone: +977 9848840460</p>
+        <p>Email: support@skincarehub.com</p>
+        <p>Phone: +123-456-7890</p>
         <div class="footer-socials">
-          <a href="https://www.facebook.com" target="_blank">
-            <img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook">
-          </a>
-          <a href="https://www.twitter.com" target="_blank">
-            <img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter">
-          </a>
-          <a href="https://www.instagram.com" target="_blank">
-            <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram">
-          </a>
-          <a href="https://www.linkedin.com" target="_blank">
-            <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn">
-          </a>
+          <a href="#"><img src="{{ url_for('static', filename='images/facebook-icon.png') }}" alt="Facebook"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/twitter-icon.png') }}" alt="Twitter"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram"></a>
+          <a href="#"><img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn"></a>
         </div>
       </div>
     </div>
 
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
-      <p>© 2025 S-Derma. All rights reserved. | <a href="/privacy_policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+      <p>© 2024 Skincare Hub. All rights reserved.</p>
     </div>
   </footer>
 

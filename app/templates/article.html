@@ -17,35 +17,35 @@
     <section>
       <div class="search-bar">
         <input type="text" placeholder="Search for articles, tips, or topics..." id="search-input">
-        <button class="search-button">Search</button>
+        <button class="search-button" onclick="searchArticles()">Search</button>
       </div>
     </section>
   </header>
 
   <section id="articles" class="articles-section">
-    <div class="articles-container">
-      <div class="article-card">
+    <div class="articles-container" id="articles-container">
+      <div class="article-card" data-title="The Ultimate Guide to Building Your Skincare Routine">
         <a href="https://www.health.com/skincare-routine-8364021" target="_blank">
           <img src="{{ url_for('static', filename='images/image1.png') }}" alt="Skincare">
           <h3>The Ultimate Guide to Building Your Skincare Routine</h3>
         </a>
         <p>Learn the essential steps for an effective skincare regimen tailored to your needs.</p>
       </div>
-      <div class="article-card">
+      <div class="article-card" data-title="10 Common Skincare Myths Debunked">
         <a href="https://www.vogue.com/article/skincare-myths" target="_blank">
           <img src="{{ url_for('static', filename='images/image2.png') }}" alt="Skincare Myths">
           <h3>10 Common Skincare Myths Debunked</h3>
         </a>
         <p>Discover the truth behind popular skincare misconceptions.</p>
       </div>
-      <div class="article-card">
-        <a href="https://www.cetaphil.com.au/skincare-tips/morning_night_skincare.html#:~:text=A%20morning%20skincare%20routine%20should,and%20products%20such%20as%20makeup." target="_blank">
+      <div class="article-card" data-title="Morning vs Night: Do You Really Need Two Skincare Routines?">
+        <a href="https://www.cetaphil.com.au/skincare-tips/morning_night_skincare.html" target="_blank">
           <img src="{{ url_for('static', filename='images/image3.png') }}" alt="Night Routine">
           <h3>Morning vs Night: Do You Really Need Two Skincare Routines?</h3>
         </a>
         <p>Explore the benefits of separate routines for day and night.</p>
       </div>
-      <div class="article-card">
+      <div class="article-card" data-title="Professional Skincare Tips">
         <a href="https://www.vogue.com/beauty/skin" target="_blank">
           <img src="{{ url_for('static', filename='images/image4.png') }}" alt="Skincare">
           <h3>Professional Skincare Tips</h3>
@@ -58,28 +58,28 @@
   <section id="topics" class="topics-section">
     <h2>Featured Topics</h2>
     <div class="articles-container">
-      <div class="article-card">
-        <a href="https://www.esteelauder.co.nz/blog-article-know-your-skin-type#:~:text=The%20Bare%2DFaced%20Method&text=Observe%20how%20your%20skin%20feels,you%20likely%20have%20normal%20skin." target="_blank">
+      <div class="article-card" data-title="How to Identify Your Skin Type">
+        <a href="https://www.esteelauder.co.nz/blog-article-know-your-skin-type" target="_blank">
           <img src="{{ url_for('static', filename='images/image5.png') }}" alt="Skincare">
           <h3>How to Identify Your Skin Type</h3>
         </a>
         <p>Find out the best ways to determine your skin type and choose products accordingly.</p>
       </div>
-      <div class="article-card">
+      <div class="article-card" data-title="Skin care in acne management">
         <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3997205/" target="_blank">
           <img src="{{ url_for('static', filename='images/image6.png') }}" alt="Skincare Myths">
-          <h3>10 Common Skincare Myths Debunked</h3>
+          <h3>Role of Skincare in Acne Management</h3>
         </a>
-        <p>Discover the truth behind popular skincare misconceptions.</p>
+        <p>Discover the truth behind skincare and acne and other conditions management.</p>
       </div>
-      <div class="article-card">
-        <a href="https://www.dermatologistnewyork.org/blog/why-you-still-need-sunscreen-in-the-winter-and-which-type-is-best#:~:text=Yes!,in%20a%20condition%20called%20photoaging." target="_blank">
+      <div class="article-card" data-title="Why Sunscreen is a Must All Year Round">
+        <a href="https://www.dermatologistnewyork.org/blog/why-you-still-need-sunscreen-in-the-winter" target="_blank">
           <img src="{{ url_for('static', filename='images/image7.png') }}" alt="Night Routine">
           <h3>Why Sunscreen is a Must All Year Round</h3>
         </a>
         <p>Understand the importance of using sunscreen every day, no matter the season.</p>
       </div>
-      <div class="article-card">
+      <div class="article-card" data-title="Top Foods for Healthy, Glowing Skin">
         <a href="https://www.healthline.com/nutrition/12-foods-for-healthy-skin" target="_blank">
           <img src="{{ url_for('static', filename='images/image8.png') }}" alt="Healthy Skin">
           <h3>Top Foods for Healthy, Glowing Skin</h3>
@@ -90,25 +90,26 @@
   </section>
 
   <script>
-    function toggleFAQ(element) {
-      const answer = element.nextElementSibling;
-      const arrow = element.querySelector(".arrow");
+    function searchArticles() {
+        let input = document.getElementById("search-input").value.toLowerCase(); // Get the search term
+        let articles = document.getElementsByClassName("article-card"); // Get all articles
 
-      // Toggle visibility
-      if (answer.style.display === "block") {
-        answer.style.display = "none";
-        arrow.textContent = "▼";
-      } else {
-        answer.style.display = "block";
-        arrow.textContent = "▲";
-      }
+        // Loop through all articles and hide those that don't match the search term
+        for (let i = 0; i < articles.length; i++) {
+            let title = articles[i].getAttribute('data-title').toLowerCase(); // Get article title stored in data-title attribute
+            if (title.includes(input)) {
+                articles[i].style.display = ""; // Show the article if it matches the search term
+            } else {
+                articles[i].style.display = "none"; // Hide the article if it doesn't match
+            }
+        }
     }
   </script>
-  <script src="{{ url_for('static', filename='article.js') }}"></script>
+
   <footer class="footer-section">
     <div class="footer-container">
       <div class="footer-logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo">
+        <img src="{{ url_for('static', filename='footer-logo.png') }}" alt="Company Logo">
         <p>Your trusted skincare partner.</p>
       </div>
 
