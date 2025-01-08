@@ -31,7 +31,6 @@ def home():
 def article():
     return render_template('article.html')
 
-
 # Route to book now page
 @main.route('/book_now')
 def book_now():
